@@ -1,6 +1,10 @@
 //masks
 $("#inputPrice").mask('000.000.000.000.000,00', {reverse: true});
 
+function convertToNumber(priceFormat) {
+    return priceFormat.replace(/\./g, '').replace(',', '.');
+}
+
 var products = [
     {
         id: 1,
@@ -53,7 +57,7 @@ var prod =    {
         id: products.length + 1,
         name: document.getElementById("inputName").value,
         description: document.getElementById("inputDescription").value,
-        price: document.getElementById("inputPrice").value,
+        price: convertToNumber(document.getElementById("inputPrice").value),
         category: document.getElementById("selectCategory").value,
         promotion: document.getElementById("checkBoxPromotion").checked,
         new: document.getElementById("checkBoxNewProduct").checked
