@@ -81,7 +81,9 @@ function addNewRow(prod){
 
     //insert product description
     var descriptionNode = document.createTextNode(prod.description);
-    newRow.insertCell().appendChild(descriptionNode);
+    var cell = newRow.insertCell();
+    cell.className='d-none d-md-table-cell';
+    cell.appendChild(descriptionNode);
 
     //insert product price    
 
@@ -109,7 +111,9 @@ function addNewRow(prod){
         options += '<span class="badge text-bg-primary">L</span>';
     }
 
-    newRow.insertCell().innerHTML = options;
+    cell = newRow.insertCell();
+    cell.className = 'd-none d-md-table-cell';
+    cell.innerHTML = options;
 
 
 }
